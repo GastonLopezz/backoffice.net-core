@@ -1,0 +1,60 @@
+﻿@model Presentacion.Models.AdministradorViewModel
+@Html.ActionLink("Menú principal", "MenuAdminUdelar", "home")
+    |
+@Html.ActionLink("Facultades", "Index", "facultad")
+    |
+@Html.ActionLink("Administrador", "Index", "administrador")
+<div style="padding:20px;"></div>
+<legend>Administradores</legend>
+<br />
+@Html.ActionLink("Crear un nuevo administrador", "Add", "Administrador")
+<br />
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset>
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Usuario)
+                        </th>
+
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Apellido)
+                        </th>
+
+                        <th scope="col">
+                            Opciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LstAdministrador) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Usuario)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Apellido)
+                            </td>
+
+                            <td>
+                                @Html.ActionLink("Editar", "edit", "Administrador", new { id = item.Id })
+                                /
+                                @Html.ActionLink("Eliminar", "delete", "Administrador", new { id = item.Id }, new { onclick = "return confirm('Are you sure you want to delete?')" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </fieldset>
+    }
+</center>

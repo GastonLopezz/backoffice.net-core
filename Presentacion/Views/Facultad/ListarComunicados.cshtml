@@ -1,0 +1,47 @@
+﻿@model Presentacion.Models.FacultadViewModel
+@Html.ActionLink("Menú principal", "MenuAdminUdelar", "home")
+|
+@Html.ActionLink("Facultad", "Index", "facultad")
+|
+@Html.ActionLink("Administrador", "Index", "administrador")
+<div style="padding:20px;"></div>
+<legend>Comunicados</legend>
+<br />
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset>
+
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Comunicado)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Texto)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Fecha_Publicacion)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LstComFacu) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Titulo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Texto)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Fecha)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </fieldset>
+    }
+</center>

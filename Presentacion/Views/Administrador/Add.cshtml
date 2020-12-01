@@ -1,0 +1,72 @@
+﻿@model Presentacion.Models.AdministradorViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Administrador", "Index", "administrador")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<legend>Crear un nuevo Administrador</legend>
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset style="width:200px;">
+            <br />
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Usuario)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Usuario)
+                @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Apellido)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Apellido)
+                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:10px;"></div>
+            <div>
+                <select id="TipoAdministrador" name="TipoAdministrador">
+                    <option value="0" selected>Selecionar Administrador</option>
+                    <option value="Facultad">Facultad</option>
+                    <option value="Udelar">Udelar</option>
+                </select>
+            </div>
+            <div style="padding:10px;"></div>
+            <div>
+                <select id="Facultad" name="Facultad">
+                    <option value="0" selected>Selecionar Facultad</option>
+                    @foreach (var item in Model.LstFacultad) {
+                        <option value="@item.Id">@item.Nombre</option>
+                    }
+                </select>
+
+            </div>
+            <div class="buttons">
+                <div>
+                    <br />
+                    <input type="submit" value="Agregar" />
+                </div>
+            </div>
+        </fieldset>
+    }
+</center>

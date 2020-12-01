@@ -1,0 +1,49 @@
+﻿@model Presentacion.Models.CursoViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<div style="padding:20px;"></div>
+<legend>Comunicados</legend>
+<br />
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset>
+
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Titulo)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Texto)
+                        </th>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Fecha_Publicacion)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LstComunicadoC) {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(item1 => item.Titulo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item1 => item.Texto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(item1 => item.FechaPublicacion)
+                        </td>
+                
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </fieldset>
+    }
+</center>

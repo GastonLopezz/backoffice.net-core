@@ -1,0 +1,12 @@
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\bin\Release\netcoreapp3.1\Negocio.deps.json
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\bin\Release\netcoreapp3.1\Negocio.dll
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\bin\Release\netcoreapp3.1\Negocio.pdb
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\bin\Release\netcoreapp3.1\Datos.dll
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\bin\Release\netcoreapp3.1\Datos.pdb
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.csprojAssemblyReference.cache
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.AssemblyInfoInputs.cache
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.AssemblyInfo.cs
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.csproj.CopyComplete
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.dll
+C:\Users\gasto\OneDrive\Escritorio\backoffice-.net-core\Negocio\obj\Release\netcoreapp3.1\Negocio.pdb

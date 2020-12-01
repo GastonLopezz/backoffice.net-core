@@ -1,0 +1,74 @@
+﻿@model Presentacion.Models.FacultadViewModel
+@Html.ActionLink("Menú principal", "MenuAdminUdelar", "home")
+|
+@Html.ActionLink("Facultad", "Index", "facultad")
+|
+@Html.ActionLink("Administrador", "Index", "administrador")
+<div style="padding:20px;"></div>
+<legend>Crear una nueva Facultad</legend>
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset style="width:200px;">
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Abreviatura)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Abreviatura)
+                @Html.ValidationMessageFor(model => model.Abreviatura, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Url)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Url)
+                @Html.ValidationMessageFor(model => model.Url, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Logo)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Logo)
+                @Html.ValidationMessageFor(model => model.Logo, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Color)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Color)
+                @Html.ValidationMessageFor(model => model.Color, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div>
+                <select id="TipoNav" name="TipoNav">
+                    <option value="0" selected>Selecionar Tipo Menú Nav</option>
+                    <option value="Vertical">Vertical</option>
+                    <option value="Horizontal">Horizontal</option>
+                </select>
+            </div>
+            <div style="padding:10px;"></div>
+            <div>
+                <select id="TipoAutenticacion" name="TipoAutenticacion">
+                    <option value="0" selected>Selecionar Tipo de autenticación</option>
+                    <option value="Interno">Interno</option>
+                    <option value="Google">Google</option>
+                </select>
+            </div>
+            <div class="buttons">
+                <br />
+                <input type="submit" value="Agregar" />
+            </div>
+        </fieldset>
+    }
+</center>

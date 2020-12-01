@@ -1,0 +1,28 @@
+﻿@model Presentacion.Models.PersonaViewModel
+<div style="padding:20px;"></div>
+@using (Html.BeginForm()) {
+    <fieldset>
+        <legend>Editar Perfil del Usuario</legend>
+        <div style="padding:5px;"></div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nombre)
+            @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+        </div>
+        <div style="padding:5px;"></div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Apellido)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Apellido)
+            @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "custom_error" })
+        </div>
+        @Html.HiddenFor(model => model.Ci)
+        <div class="buttons">
+            <br />
+            <input type="submit" value="Editar" />
+        </div>
+    </fieldset>
+}

@@ -1,0 +1,30 @@
+﻿--Personas
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (1, 123, 'Marcelo','Tizzi');
+
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (2, 1234, 'Gaston','Lopez');
+
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (3, 12345, 'Alenadro Alexander','Rodiguez');
+
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (4, 123456, 'Silvia','Bazzano');
+
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (5, 1234567, 'Juan','Perez');
+
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (6, 12345678, 'J. Jonah','Jameson');
+
+INSERT INTO fing."Persona"(
+	"Id", "Ci", "Nombre", "Apellido")
+	VALUES (7, 123456789, 'Anthony','Stark');
+
+--Cuentas

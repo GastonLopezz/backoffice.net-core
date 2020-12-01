@@ -1,0 +1,32 @@
+﻿<div style="margin:0;">
+    @model Presentacion.Models.AdministradorViewModel
+    <div style="padding:20px"></div>
+    <center>
+        @using (Html.BeginForm("IniciarSesion", "Home", FormMethod.Post)) {
+            <fieldset style="width:200px;">
+                <legend>Login</legend>
+                <div style="padding:5px;"></div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Usuario)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Usuario)
+                    @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "custom_error" })
+                </div>
+                <div style="padding:5px;"></div>
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Password)
+                </div>
+                <div class="editor-field">
+                    @Html.PasswordFor(model => model.Password)
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "custom_error" })
+                </div>
+                <br />
+                <div class="buttons">
+                    <input type="submit" value="Iniciar Sesión" />
+                    <br />
+                </div>
+            </fieldset>
+        }
+        </center>
+</div>

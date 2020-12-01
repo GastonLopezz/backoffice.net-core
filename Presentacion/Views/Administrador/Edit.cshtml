@@ -1,0 +1,36 @@
+﻿@model Presentacion.Models.AdministradorViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Administrador", "Index", "administrador")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<legend>Editar Perfil del Administrador</legend>
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset style="width:200px;">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Apellido)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Apellido)
+                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "custom_error" })
+            </div>
+            @Html.HiddenFor(model => model.Nombre)
+            <div class="buttons">
+                <br />
+                <input type="submit" value="Editar" />
+            </div>
+        </fieldset>
+    }
+</center>

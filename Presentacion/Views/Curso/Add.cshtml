@@ -1,0 +1,84 @@
+﻿@model Presentacion.Models.CursoViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<legend>Crear un nuevo Curso</legend>
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset style="width:200px;">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Creditos)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Creditos)
+                @Html.ValidationMessageFor(model => model.Creditos, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Year_Diactado)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Year_Diactado)
+                @Html.ValidationMessageFor(model => model.Year_Diactado, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Informacion)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Informacion)
+                @Html.ValidationMessageFor(model => model.Informacion, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nota_Minima_Aprobacion)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nota_Minima_Aprobacion)
+                @Html.ValidationMessageFor(model => model.Nota_Minima_Aprobacion, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nota_Maxima_Aprobacion)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nota_Maxima_Aprobacion)
+                @Html.ValidationMessageFor(model => model.Nota_Maxima_Aprobacion, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nota_Minima_Examen)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nota_Minima_Examen)
+                @Html.ValidationMessageFor(model => model.Nota_Minima_Examen, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nota_Maxima_Examen)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nota_Maxima_Examen)
+                @Html.ValidationMessageFor(model => model.Nota_Maxima_Examen, "", new { @class = "custom_error" })
+            </div>
+            <br />
+            <div class="buttons">
+                <div>
+                    <input type="submit" value="Agregar" />
+                </div>
+            </div>
+
+        </fieldset>
+    }
+</center>

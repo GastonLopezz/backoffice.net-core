@@ -1,0 +1,53 @@
+﻿@model Presentacion.Models.DocenteViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<center>
+    @using (Html.BeginForm()) {
+        <div>
+            <select id="Cursos" name="Cursos">
+                <option value="0" selected>Selecionar Cursos</option>
+                @foreach (var item in Model.LstCursos) {
+                    <option value="@item.Id">@item.Nombre</option>
+                }
+            </select>
+        </div>
+        <div class="buttons">
+            <div>
+                <br />
+                <input type="submit" value="Agregar" />
+            </div>
+        </div>
+        <br />
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Cursos)
+                    </th>
+                    <th scope="col">
+                        Opciones
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.LstCursosDisctados) {
+                    <tr>
+                        <td>
+                            @Html.HiddenFor(model => model.Id)
+
+                            @Html.DisplayFor(modelItem => item.Nombre)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Borrar", "DeleteAsignacionDocente", "docente", new { cursoId = item.Id, docenteId = Model.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    }
+</center>

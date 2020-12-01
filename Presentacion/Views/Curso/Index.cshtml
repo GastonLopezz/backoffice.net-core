@@ -1,0 +1,56 @@
+﻿@model Presentacion.Models.CursoViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<legend>Cursos</legend>
+<br />
+@Html.ActionLink("Crear un curso", "Add", "Curso")
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset>
+            <br />
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Creditos)
+                        </th>
+                        <th scope="col">
+                            Opciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LstCurso) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Creditos)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "edit", "curso", new { id = item.Id })
+                                /
+                                @Html.ActionLink("Eliminar", "delete", "curso", new { id = item.Id }, new { onclick = "return confirm('Are you sure you want to delete?')" })
+                                /
+                                @Html.ActionLink("Agregar comunicado", "comunicadoCurso", "curso", new { id = item.Id })
+                                /
+                                @Html.ActionLink("Ver comunicados", "listarComunicados", "curso", new { idCurso = item.Id })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+
+            </table>
+        </fieldset>
+    }
+</center>

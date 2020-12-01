@@ -1,0 +1,59 @@
+﻿@model Presentacion.Models.FacultadViewModel
+@Html.ActionLink("Menú principal", "MenuAdminUdelar", "home")
+<div style="padding:20px;"></div>
+<legend>Facultades</legend>
+<br />
+@Html.ActionLink("Crear una nueva facultad", "Add", "Facultad")
+<br />
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset>
+
+            <br />
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Nombre)
+                        </th>
+
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Abreviatura)
+                        </th>
+
+                        <th scope="col">
+                            @Html.DisplayNameFor(model => model.Url)
+                        </th>
+                        <th scope="col">
+                            Opciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.LstFacultad) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Nombre)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Abreviatura)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(item1 => item.Url)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "edit", "Facultad", new { id = item.Id })
+                                /
+                                @Html.ActionLink("Eliminar", "delete", "Facultad", new { id = item.Id }, new { onclick = "return confirm('Are you sure you want to delete?')" })
+                                /
+                                @Html.ActionLink("Agregar comunicado", "comunicadoFacultad", "Facultad", new { url = item.Url })
+                                /
+                                @Html.ActionLink("Ver comunicados", "listarComunicados", "Facultad", new { url = item.Url })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </fieldset>
+    }
+</center>

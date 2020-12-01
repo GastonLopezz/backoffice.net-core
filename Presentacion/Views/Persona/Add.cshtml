@@ -1,0 +1,38 @@
+﻿@model Presentacion.Models.PersonaViewModel
+
+<div style="padding:20px;"></div>
+@using (Html.BeginForm()) {
+<fieldset>
+    <legend>Crear un nuevo Usuario</legend>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Ci)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Ci)
+        @Html.ValidationMessageFor(model => model.Ci, "", new { @class = "custom_error" })
+    </div>
+    <div style="padding:5px;"></div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Nombre)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Nombre)
+        @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+    </div>
+    <div style="padding:5px;"></div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Apellido)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Apellido)
+        @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "custom_error" })
+    </div>
+    <br />
+    <div class="buttons">
+        <div class="btn-primary">
+            <br />
+            <input type="submit" value="Agregar" />
+        </div>
+    </div>
+</fieldset>
+}

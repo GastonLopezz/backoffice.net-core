@@ -1,0 +1,17 @@
+﻿<div class="container">
+    <br />
+    <br />
+    <h5>Menú de Opciones</h5>
+    <br />
+    <center>
+        @Html.ActionLink("Administrador", "Index", "administrador")
+        |
+        @Html.ActionLink("Facultades", "Index", "facultad")
+        |
+        @Html.ActionLink("Logout", "Index", "home", new { onclick = "return confirm('Está seguro que desea salir?')" })
+        </center>
+            <br />
+            <br />
+
+</div>
+

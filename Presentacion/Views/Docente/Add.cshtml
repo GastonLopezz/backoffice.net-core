@@ -1,0 +1,76 @@
+﻿@model Presentacion.Models.DocenteViewModel
+@Html.ActionLink("Menú principal", "MenuAdminFacu", "home")
+    |
+@Html.ActionLink("Docentes", "Index", "docente")
+    |
+@Html.ActionLink("Cursos", "Index", "curso")
+<div style="padding:20px;"></div>
+<legend>Crear un nuevo Docente</legend>
+<center>
+    @using (Html.BeginForm()) {
+        <fieldset style="width:200px;">
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Ci)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Ci)
+                @Html.ValidationMessageFor(model => model.Ci, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nombre)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nombre)
+                @Html.ValidationMessageFor(model => model.Nombre, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Apellido)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Apellido)
+                @Html.ValidationMessageFor(model => model.Apellido, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Usuario)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.Usuario)
+                @Html.ValidationMessageFor(model => model.Usuario, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password)
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Email)
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "custom_error" })
+            </div>
+            <div style="padding:5px;"></div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Telefono)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Telefono)
+                @Html.ValidationMessageFor(model => model.Telefono, "", new { @class = "custom_error" })
+            </div>
+            <br />
+            <div class="buttons">
+                <div>
+                    <input type="submit" value="Agregar" />
+                </div>
+            </div>
+        </fieldset>
+    }
+</center>
